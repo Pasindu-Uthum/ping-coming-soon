@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  @include center();
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.heading {
+  width: 650px;
+  h1 {
+    padding: 20px 0;
+    font-weight: 300;
+    font-size: 3rem;
+    color: hsl(0, 0%, 59%);
+    span {
+      color: black;
+      font-weight: 700;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .input-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    input {
+      display: block;
+      padding: 15px;
+      border-radius: 100px;
+      border: 2px solid hsl(223, 100%, 88%);
+      font-size: 0.9rem;
+      width: 68%;
+      outline: none;
+    }
+    .warning-input {
+      border-color: hsl(354, 100%, 66%);
+    }
+    button {
+      display: block;
+      width: 30%;
+      padding: 15px;
+      border: none;
+      border-radius: 100px;
+      background-color: hsl(223, 87%, 63%);
+      font-size: 0.9rem;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px hsl(223, 100%, 88%);
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  .warning {
+    float: left;
+    padding: 8px;
+    font-size: 0.8rem;
+    color: hsl(354, 100%, 66%);
+    display: none;
+  }
+}
+
+.banner-img {
+  margin: 30px 0;
+  width: 500px;
+}
+
+.footer {
+  @include center();
+  flex-direction: column;
+  .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      @include center();
+      border-radius: 15px;
+      border: 1px solid hsl(223, 100%, 88%);
+      &:hover {
+        background-color: hsl(223, 87%, 63%);
+        border: none;
+        cursor: pointer;
+        i {
+          color: white;
+        }
+      }
+      i {
+        color: hsl(223, 87%, 63%);
+      }
+    }
+  }
+  p {
+    font-size: 0.7rem;
+    color: hsl(0, 0%, 59%);
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 681px) {
+  .heading {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 529px) {
+  .banner-img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  .heading {
+    h1 {
+      font-size: 2.5rem;
+    }
+    .input-section {
+      flex-direction: column;
+      input,
+      button {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+}
